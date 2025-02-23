@@ -34,8 +34,8 @@ build() {
     echo "Linux amd64 binary: ${BUILD_DIR}/${APP_NAME}"
 
     # 构建Windows amd64
-    GOOS=windows GOARCH=amd64 CGO_ENABLED=0 go build -o "${BUILD_DIR}/${APP_NAME}.exe" main.go
-    echo "Windows amd64 binary: ${BUILD_DIR}/${APP_NAME}.exe"
+    # GOOS=windows GOARCH=amd64 CGO_ENABLED=0 go build -o "${BUILD_DIR}/${APP_NAME}.exe" main.go
+    # echo "Windows amd64 binary: ${BUILD_DIR}/${APP_NAME}.exe"
 
     # 构建当前平台二进制
     # CGO_ENABLED=0 go build -o "${BUILD_DIR}/${APP_NAME}" main.go

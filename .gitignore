@@ -1,0 +1,4 @@
+bin/myapp.exe
+var/
+*.log
+*.exe

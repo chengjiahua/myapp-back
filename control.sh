@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 配置参数
-APP_NAME="myapp"           # 应用名称
+APP_NAME="myapp-back"           # 应用名称
 BUILD_DIR="./bin"          # 构建输出目录
 LOG_DIR="./logs"           # 日志目录
 CONFIG_FILE="./cfg.json" # 配置文件路径

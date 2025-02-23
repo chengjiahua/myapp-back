@@ -20,4 +20,6 @@ func InitDB() {
 	if err != nil {
 		panic("failed to ping database")
 	}
+
 }
+

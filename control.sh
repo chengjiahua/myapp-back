@@ -4,7 +4,7 @@
 APP_NAME="myapp-back"           # 应用名称
 BUILD_DIR="./bin"          # 构建输出目录
 LOG_DIR="./logs"           # 日志目录
-CONFIG_FILE="./cfg.json" # 配置文件路径
+CONFIG_FILE="../cfg.json" # 配置文件路径
 
 # 自动检测系统和架构
 OS="unknown"

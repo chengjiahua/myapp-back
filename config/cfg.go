@@ -2,7 +2,7 @@ package config
 
 import (
 	"encoding/json"
-	"io/ioutil"
+	"io"
 	"os"
 )
 
@@ -39,13 +39,14 @@ func LoadConfig(filePath string) ( ) {
 	}
 	defer file.Close()
 
-	byteValue, err := ioutil.ReadAll(file)
+	byteValue, err := io.ReadAll(file)
 	if err != nil {
 		panic("Error reading config file: " + err.Error())
 	}
-
-	if err := json.Unmarshal(byteValue, Cfg); err != nil {
+	cfg := Config{}
+	if err := json.Unmarshal(byteValue, &cfg); err != nil {
 		panic("Error parsing config file: " + err.Error())
 	}
+	Cfg = &cfg
 }
 

@@ -1,10 +1,10 @@
 {
   "service": {
-    "address": "http://localhost:8080"
+    "address": "127.0.0.1:8080"
   },
   "database": {
     "mysql": {
-      "dsn": "username:password@tcp(127.0.0.1:3306)/chess?charset=utf8&parseTime=True&loc=Local"
+      "dsn": "root:Kylin123.@tcp(47.112.170.171:3306)/myapp?charset=utf8&parseTime=True&loc=Local"
     }
   },
   "logging": {

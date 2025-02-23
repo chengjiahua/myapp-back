@@ -10,10 +10,22 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
-func Register(c *gin.Context) {
+type Login struct {
+}
+
+func NewLogin() *Login {
+	return &Login{}	
+}
+
+func (l *Login)  Register(c *gin.Context) {
 	var user model.User
 	if err := c.ShouldBindJSON(&user); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	if user.Username == "" || user.Password == "" {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Username and password are required"})
 		return
 	}
 
@@ -30,10 +42,16 @@ func Register(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusCreated, gin.H{"message": "User created successfully"})
+
+
+	c.JSON(http.StatusCreated, Response{
+		Code: 200,
+		Message: "success",
+		Data: user,
+	})
 }
 
-func Login(c *gin.Context) {
+func (l *Login) Login(c *gin.Context) {
 	var credentials struct {
 		Username string `json:"username"`
 		Password string `json:"password"`
@@ -61,5 +79,9 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"token": token})
+	c.JSON(http.StatusOK, Response{
+		Code: 200,
+		Message: "success",
+		Data: gin.H{"token": token},
+	})
 }

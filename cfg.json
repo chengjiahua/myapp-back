@@ -1,0 +1,15 @@
+{
+  "service": {
+    "address": "http://localhost:8080"
+  },
+  "database": {
+    "mysql": {
+      "dsn": "username:password@tcp(127.0.0.1:3306)/chess?charset=utf8&parseTime=True&loc=Local"
+    }
+  },
+  "logging": {
+    "level": "info",
+    "file": "app.log"
+  },
+  "debug": true
+}
